@@ -1,5 +1,6 @@
-var aPress = 0;
-var currentChar;
+
+// var currentChar;
+var yanse = "#f6f0e2";
 
 $(document).ready(function() {
 	var entryCount = 0;
@@ -36,55 +37,55 @@ $(document).ready(function() {
    		deleteElement();
 
 
-   	} else if(e.which == 37) {
-      //left arrow
-      //get id of the image
-      var id = '#' + currentChar; 
-      var img = $(id);
-      //calculate the left position
-      var offset = img.offset();
-      var currentLeft = offset.left;
+   	// } else if(e.which == 37) {
+    //   //left arrow
+    //   //get id of the image
+    //   var id = '#' + currentChar; 
+    //   var img = $(id);
+    //   //calculate the left position
+    //   var offset = img.offset();
+    //   var currentLeft = offset.left;
 
-      document.getElementById(currentChar).style.left = currentLeft - 10 + 'px';
+    //   document.getElementById(currentChar).style.left = currentLeft - 10 + 'px';
 
 
-    } else if(e.which == 38){
-      //up arrow
-      //get id of the image
-      var id = '#' + currentChar; 
-      //call the image
-      var img = $(id);
-      //calculate the bottom position
-      var offset = img.offset();
-      var top = offset.top;
-      var currentBottom = $(window).height() - top - img.height();
+    // } else if(e.which == 38){
+    //   //up arrow
+    //   //get id of the image
+    //   var id = '#' + currentChar; 
+    //   //call the image
+    //   var img = $(id);
+    //   //calculate the bottom position
+    //   var offset = img.offset();
+    //   var top = offset.top;
+    //   var currentBottom = $(window).height() - top - img.height();
 
-      //update bottom position
-      document.getElementById(currentChar).style.bottom = currentBottom + 10 + 'px';
+    //   //update bottom position
+    //   document.getElementById(currentChar).style.bottom = currentBottom + 10 + 'px';
 
-    } else if(e.which == 39) {
-      //right arrrow
-      //get id of the image
-      var id = '#' + currentChar; 
-      var img = $(id);
-      //calculate the left position
-      var offset = img.offset();
-      var currentLeft = offset.left;
+    // } else if(e.which == 39) {
+    //   //right arrrow
+    //   //get id of the image
+    //   var id = '#' + currentChar; 
+    //   var img = $(id);
+    //   //calculate the left position
+    //   var offset = img.offset();
+    //   var currentLeft = offset.left;
 
-      document.getElementById(currentChar).style.left = currentLeft + 10 + 'px';
+    //   document.getElementById(currentChar).style.left = currentLeft + 10 + 'px';
 
-    } else if(e.which == 40) {
-      //down arrow
-      var id = '#' + currentChar; 
-      //call the image
-      var img = $(id);
-      //calculate the bottom position
-      var offset = img.offset();
-      var top = offset.top;
-      var currentBottom = $(window).height() - top -img.height();
+    // } else if(e.which == 40) {
+    //   //down arrow
+    //   var id = '#' + currentChar; 
+    //   //call the image
+    //   var img = $(id);
+    //   //calculate the bottom position
+    //   var offset = img.offset();
+    //   var top = offset.top;
+    //   var currentBottom = $(window).height() - top -img.height();
 
-      //update bottom position
-      document.getElementById(currentChar).style.bottom = currentBottom - 10 + 'px';
+    //   //update bottom position
+    //   document.getElementById(currentChar).style.bottom = currentBottom - 10 + 'px';
 
 
     }
@@ -106,6 +107,7 @@ function createElement(k) {
       img.id = 'a';
       img.style.width = "16%";
       document.body.appendChild(img);
+      $( "#a" ).draggable();
    }
 
   }
@@ -119,10 +121,11 @@ function createElement(k) {
       img.id = 'b';
       //presetting the positon of the images
       // img.style.top = '0px';
-      // img.style.right ='100px';
+      img.style.right ='100px';
       //how you can change the size of images
       img.style.width = "8%";
       document.body.appendChild(img);
+      $( "#b" ).draggable();
    }
 
   }
@@ -134,8 +137,10 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/c.png');
       img.id = 'c';
+      img.style.top ='480px';
       img.style.width = "30%";
       document.body.appendChild(img);
+      $( "#c" ).draggable();
    }
 
   }
@@ -147,8 +152,10 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/d.png');
       img.id = 'd';
+      img.style.right ='300px';
       img.style.width = "4%";
       document.body.appendChild(img);
+      $( "#d" ).draggable();
    }
   }
 	if (k == "e" || k == "E") {
@@ -159,8 +166,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/e.png');
       img.id = 'e';
+      img.style.top ='80px';
+      img.style.right ='80px';
       img.style.width = "5%";
       document.body.appendChild(img);
+      $( "#e" ).draggable();
    }
   }
 	if (k == "f" || k == "F") {
@@ -171,8 +181,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/f.png');
       img.id = 'f';
+      img.style.left ='280px';
+      img.style.top ='80px';
       img.style.width = "10%";
       document.body.appendChild(img);
+      $( "#f" ).draggable();
    } 
   }
   if (k == "g" || k == "G") {
@@ -183,8 +196,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/g.png');
       img.id = 'g';
+      img.style.left ='550px';
+      img.style.bottom ='80px';
       img.style.width = "11%";
       document.body.appendChild(img);
+      $( "#g" ).draggable();
    }
   }
   if (k == "h" || k == "H") {
@@ -195,8 +211,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/h.png');
       img.id = 'h';
+      img.style.left ='180px';
+      img.style.bottom ='30px';
       img.style.width = "35%";
       document.body.appendChild(img);
+      $( "#h" ).draggable();
    }
   }
   if (k == "i" || k == "I") {
@@ -207,8 +226,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/i.png');
       img.id = 'i';
+      img.style.left ='580px';
+      img.style.top ='580px';
       img.style.width = "5%";
       document.body.appendChild(img);
+      $( "#i" ).draggable();
    }
   }
   if (k == "j" || k == "J") {
@@ -219,8 +241,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/j.png');
       img.id = 'j';
+      img.style.right ='80px';
+      img.style.bottom ='80px';
       img.style.width = "5%";
       document.body.appendChild(img);
+      $( "#j" ).draggable();
    }
   }
   if (k == "k" || k == "K") {
@@ -231,8 +256,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/k.png');
       img.id = 'k';
+      img.style.right ='380px';
+      img.style.top ='280px';
       img.style.width = "12%";
       document.body.appendChild(img);
+      $( "#k" ).draggable();
    }
   }
   if (k == "l" || k == "L") {
@@ -243,8 +271,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/l.png');
       img.id = 'l';
+      img.style.top ='380px';
+      img.style.right ='80px';
       img.style.width = "25%";
       document.body.appendChild(img);
+      $( "#l" ).draggable();
    }
   }
   if (k == "m" || k == "M") {
@@ -255,8 +286,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/m.png');
       img.id = 'm';
+      img.style.right ='580px';
+      img.style.top ='80px';
       img.style.width = "12%";
       document.body.appendChild(img);
+      $( "#m" ).draggable();
    }
   }
   if (k == "n" || k == "N") {
@@ -267,8 +301,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/n.png');
       img.id = 'n';
+      img.style.top ='480px';
+      img.style.left ='680px';
       img.style.width = "8%";
       document.body.appendChild(img);
+      $( "#n" ).draggable();
    }
   }
   if (k == "o" || k == "O") {
@@ -279,8 +316,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/o.png');
       img.id = 'o';
+      img.style.left ='580px';
+      img.style.bottom ='380px';
       img.style.width = "18%";
       document.body.appendChild(img);
+      $( "#o" ).draggable();
    }
   }
   if (k == "p" || k == "P") {
@@ -291,8 +331,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/p.png');
       img.id = 'p';
+      img.style.right ='380px';
+      img.style.top ='380px';
       img.style.width = "3%";
       document.body.appendChild(img);
+      $( "#p" ).draggable();
    }
   }
   if (k == "q" || k == "Q") {
@@ -303,8 +346,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/q.png');
       img.id = 'q';
+      img.style.left ='780px';
+      img.style.top ='80px';
       img.style.width = "13%";
       document.body.appendChild(img);
+      $( "#q" ).draggable();
    }
   }
   if (k == "r" || k == "R") {
@@ -315,8 +361,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/r.png');
       img.id = 'r';
+      img.style.top ='380px';
+      img.style.right ='480px';
       img.style.width = "9%";
       document.body.appendChild(img);
+      $( "#r" ).draggable();
    }
   }
   if (k == "s" || k == "S") {
@@ -327,8 +376,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/s.png');
       img.id = 's';
+      img.style.left ='80px';
+      img.style.bottom ='380px';
       img.style.width = "80%";
       document.body.appendChild(img);
+      $( "#s" ).draggable();
    }
   }
   if (k == "t" || k == "T") {
@@ -339,8 +391,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/t.png');
       img.id = 't';
+      img.style.top ='80px';
+      img.style.left ='80px';
       img.style.width = "5%";
       document.body.appendChild(img);
+      $( "#t" ).draggable();
    }
   }
   if (k == "u" || k == "U") {
@@ -351,8 +406,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/u.png');
       img.id = 'u';
+      img.style.top ='80px';
+      img.style.right ='480px';
       img.style.width = "13%";
       document.body.appendChild(img);
+      $( "#u" ).draggable();
    }
   }
   if (k == "v" || k == "V") {
@@ -363,8 +421,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/v.png');
       img.id = 'v';
+      img.style.left ='180px';
+      img.style.top ='180px';
       img.style.width = "12%";
       document.body.appendChild(img);
+      $( "#v" ).draggable();
    }
   }
   if (k == "w" || k == "W") {
@@ -375,8 +436,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/w.png');
       img.id = 'w';
+      img.style.left ='230px';
+      img.style.top ='80px';
       img.style.width = "5%";
       document.body.appendChild(img);
+      $( "#w" ).draggable();
    }
   }
   if (k == "x" || k == "X") {
@@ -387,8 +451,11 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/x.png');
       img.id = 'x';
+      img.style.right ='200px';
+      img.style.bottom ='1px';
       img.style.width = "16%";
       document.body.appendChild(img);
+      $( "#x" ).draggable();
    }
   }
   if (k == "y" || k == "Y") {
@@ -399,8 +466,10 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/y.png');
       img.id = 'y';
+      img.style.top ='300px';
       img.style.width = "8%";
       document.body.appendChild(img);
+      $( "#y" ).draggable();
    }
   }
   if (k == "z" || k == "Z") {
@@ -411,19 +480,48 @@ function createElement(k) {
       var img = document.createElement('img');
       img.setAttribute('src', 'assets/z.png');
       img.id = 'z';
+      img.style.right ='80px';
+      img.style.top ='280px';
       img.style.width = "38%";
       document.body.appendChild(img);
+      $( "#z" ).draggable();
    }
 
   }
+
+
   if (k == " ") { 
     // elem.before('<span class="inner">&nbsp;</span>'); 
-    // var colors = ['purple', 'yellow', 'orange', 'brown', 'black'];
     //  for (i = 0; i < colors.length; i++) {
 
     //     document.getElementById("container").style.backgroundColor = colors[i];
 
-     document.getElementById("container").style.backgroundColor = "#BEC37F";
+    
+      var colors = ["#f6f0e2", "#ffbcbb", "#defef9", "#bec380", "#b6c7d9", "#fdfbd2"];
+ 
+     console.log(colors);
+
+
+      if(yanse == colors[0]) {
+        yanse = colors[1];
+
+      } else if (yanse == colors[1]) {
+        yanse = colors[2];
+
+      } else if(yanse == colors[2]) {
+        yanse = colors[3];
+      }
+      else if(yanse == colors[3]) {
+        yanse = colors[4];
+      }
+      else if(yanse == colors[4]) {
+        yanse = colors[5];
+      }
+      else if(yanse == colors[5]) {
+        yanse = colors[0];
+      }
+      console.log(yanse)
+   document.getElementById("container").style.backgroundColor = yanse;
   }
 
 }

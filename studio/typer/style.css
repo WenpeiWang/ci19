@@ -3,6 +3,13 @@
   animation: blinker 1s step-end infinite; 
   /*you can change 'step-end' to 'linear' for smooth transition*/
 }
+
+#draggable { 
+  width: 150px; 
+  height: 150px; 
+  padding: 0.5em; 
+}
+
 @keyframes blinker {  
   50% { opacity: 0; }
 }
