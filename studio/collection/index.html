@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>collection</title>
+ <title>collection</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 
-<img id="cursor" src="">
-
 <div class="age">
 <div class = "content">
-	<p>Age 3-5</p>
-	<p>Age 6-12</p>
-	<p>Age 13-15</p>
-	<p>Age 16-18</p>
-	<p>Age now</p>
-	</div>
+ <p onclick="changeText(this)">Age 3-5</p>
+ <p onclick="TwoText(this)">Age 6-12</p>
+ <p>Age 13-15</p>
+ <p>Age 16-18</p>
+ <p>Age now</p >
+ </div>
 </div>
 
 
 <div class="game"></div>
 
 
-<div class="time">	
-	<div class = "blank"></div>
-	<div class = "content">
-	<p style = "color: #45285B;">3000-1000 B.C.</p>
-	<p style = "color: #851D40;">1000-0 B.C.</p>
-	<p style = "color: #A53956;">0-500A.D.</p>
-	<p style = "color: #E8435F;">500-1500A.D.</p>
-	<p style = "color: #F19794;">16th century</p>
-	<p style = "color: #EE8314;">17th century</p>
-	<p style = "color: #F5BB19;">18th century</p>
-	<p style = "color: #F6CAA9;">19th century</p>
-	<p style = "color: #C5C5A5;">20th century</p>
-	<p style = "color: #7FAC97;">contemporary</p>
+<div class="time"> 
+ <div class = "blank"></div>
+ <div class = "content">
+ <p style = "color: #45285B;">3000-1000 B.C.</p >
+ <p style = "color: #851D40;">1000-0 B.C.</p >
+ <p style = "color: #A53956;">0-500A.D.</p >
+ <p style = "color: #E8435F;">500-1500A.D.</p >
+ <p style = "color: #F19794;">16th century</p >
+ <p style = "color: #EE8314;">17th century</p >
+ <p style = "color: #F5BB19;">18th century</p >
+ <p style = "color: #F6CAA9;">19th century</p >
+ <p style = "color: #C5C5A5;">20th century</p >
+ <p style = "color: #7FAC97;">contemporary</p >
 
-	</div>
+ </div>
 </div>
-    <p id="invisible" class="hide">See me now!</p>
 
     
 <script>
+var diyizu
+var dierzu
 var url = "https://raw.githubusercontent.com/WenpeiWang/ci19/master/studio/collection/mydata.json"
  fetch(url)
  .then(function(response){return response.json();})
@@ -51,14 +50,18 @@ var url = "https://raw.githubusercontent.com/WenpeiWang/ci19/master/studio/colle
 
  function buildPage(data){
 for(var i = 0; i < data.length; i = i + 1){
- var object = document.createElement("h1");
- object.classList.add("diyizu");
+ var one = document.createElement("p");
+ var two = document.createElement("p");
+ one.classList.add("diyizu");
+ two.classList.add("dierzu");
  // var image = document.createElement("h2");
  // var die = document.createElement("h3");
- document.body.appendChild(Age 3-5);
+ document.body.appendChild(one);
+ document.body.appendChild(two);
  // document.body.appendChild(image);
  // document.body.appendChild(die);
- Age 3-5 .innerHTML = data[i].Age 3-5;
+ one.innerHTML = data[i].one;
+ two.innerHTML = data[i].two;
 
  // image.innerHTML = data[i].image;
  // die.innerHTML = data[i].die;
@@ -77,33 +80,28 @@ for(var i = 0; i < data.length; i = i + 1){
  // if(data[i].kind == "amazingmango"){
  //  kind.style.color = "red";  
  // }
- var line = document.createElement("hr");
- document.body.appendChild(line);
+ 
+}
+}
+function changeText(id) {
+  var diyizu = document.getElementsByClassName("diyizu");
+  for(var i = 0; i < diyizu.length; i++){
+  
+  diyizu[i].style.display = "block";
+}
 }
 
-let index = 1;
-const NUM_ICOS = 10;
-
-const cursor = document.getElementById('cursor');
-
-setInterval(function () {
-	index = index > NUM_ICOS ? 1 : index;
-	cursor.src = './pngs/' + index + '.png';
-	index ++;
-}, 400);
-
-document.body.addEventListener('mousemove', function (e) {
-	cursor.style.left = e.pageX + 'px';
-	cursor.style.top = e.pageY + 'px';
-}, false);
-
- $(function() {
-	$("#visible").click(function() {
-	    $('#invisible').toggleClass("show");
-	  });  
-	});
-
+function TwoText(id) {
+  var diyizu
+  var dierzu = document.getElementsByClassName("dierzu");
+  for(var i = 0; i < dierzu.length; i++){
+  
+  diyizu[i].style.display = "none";
+  dierzu[i].style.display = "block";
+}
+}
 
 </script>
+
 </body>
 </html>
