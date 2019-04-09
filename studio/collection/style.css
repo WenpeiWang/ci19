@@ -8,27 +8,55 @@ body{
 	
 }
 
-.age{
+.bg{
+	width:100vw;
+	height:100vh;
+}
+
+#list{
 margin-top: 2%;
 width:30vw;
 height:100vh;
 float:left;
 font-size: 13px;
-
+line-height: 1.7;
 }
+.left{
+	float:left;
+	margin-top: 12%;
+	margin-left: 15%;
+}
+.right{
+	float:left;
+	margin-top: 12%;
+	margin-left: 20%;
+}
+
+#thrid{
+	margin-top: 20%;
+}
+
+#fourth{
+	margin-top: 3%;
+}
+
+#fifth{
+	margin-top: 23%;
+}
+
 .game{
 width:40vw;
 height:100vh;
 float:left;
+line-height: 1.4;
+text-align: center;
 
 }
 .time{
-
-position: fi;
 margin-right: :0;
 width:30vw;
 height:100vh;
-float:left;
+float:right;
 text-align: right;
 font-size: 13px;
 }
@@ -41,14 +69,32 @@ font-size: 13px;
 	line-height: 7px;
 	margin-bottom: 0;
 }
+#video{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+}
 
 p{
 	line-height: 7px;
 }
 
-.diyizu{
-  display:none;
- }
- .dierzu{
-  display:none;
- }
+#first{
+	margin-top: 10%;
+}
+#first, #second, #thrid, #fourth, #fifth, #video{
+	display: none;
+}
+
+#first1, #second1, #thrid1, #fourth1, #fifth1{
+	margin-left: 8%;
+}
+
+#first1:hover, #second1:hover, #thrid1:hover, #fourth1:hover, #fifth1:hover{
+	text-decoration: underline; 
+	text-decoration-style: wavy;
+	text-decoration-color: #E8435F;
+}

@@ -4,102 +4,225 @@
  <title>collection</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
+<div class="bg">
+<iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/gWNZMziSl4k?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<div class="age">
-<div class = "content">
- <p onclick="changeText(this)">Age 3-5</p>
- <p onclick="TwoText(this)">Age 6-12</p>
- <p>Age 13-15</p>
- <p>Age 16-18</p>
- <p>Age now</p >
- </div>
+
+<div id="list">
+ <div class="list" id="first1">Age 3-5</div>
+ <div class="list" id="second1">Age 6-12</div>
+ <div class="list" id="thrid1">Age 13-15</div>
+ <div class="list" id="fourth1">Age 16-18</div>
+ <div class="list" id="fifth1">now</div>
 </div>
 
 
-<div class="game"></div>
+<div class="game">
+
+	<div id="first" class="detail">
+		<p class="firstone" id="firstvideo" style= "color: #F5BB19;">Duck Duck Goose</p>
+		<p class="firstone" style = "color: #7FAC97;">clapping games</p>
+		<p class="firstone" style = "color: #C5C5A5">hide and seek</p>
+		<p class="firstone" style = "color: #851D40">Weaving A Flower Basket</p>
+		<p class="firstone" style = "color: #851D40">musical chairs</p>
+		<p class="firstone" style = "color: #851D40">hula hoops</p>
+		<p class="firstone" style = "color: #F5BB19">Blind Man's Buff</p>
+		<p class="firstone" style = "color: #A53956">Statues</p>
+		<p class="firstone" style = "color: #F5BB19">kite flying</p>
+		<p class="firstone" style = "color: #C5C5A5">water fights</p>
+		<p class="firstone" style = "color: #C5C5A5">tug of war</p>
+		<p class="firstone" style = "color: #C5C5A5">dolge ball</p>
+		<p class="firstone" style = "color: #F19794">eagle and chicks game</p>
+		<p class="firstone" style = "color: #7FAC97">Rooster Game</p>
+		<p class="firstone" style = "color: #F19794">hopstoch</p>
+		<p class="firstone" style = "color: #7FAC97">riddles</p>
+		<p class="firstone" style = "color: #C5C5A5">xiangqi</p>
+		<p class="firstone" style = "color: #7FAC97">weiqi</p>
+		<p class="firstone" style = "color: #A53956">checkers</p>
+		<p class="firstone" style = "color: #E8435F">Jigsaw Puzzles</p>
+	</div> 
+
+	<div id="second" class="detail">
+		<div class="left">
+			<p class="firstone" style = "color: #E8435F;">Cat's Cradle
+			<p class="firstone" style = "color: #C5C5A5;">jianzi
+			<p class="firstone" style = "color: #A53956;">marbles
+			<p class="firstone" style = "color: #851D40;">hoop scrolling
+			<p class="firstone" style = "color: #851D40;">jump rope
+			<p class="firstone" style = "color: #C5C5A5;">yoyo
+			<p class="firstone" style = "color: #EE8314;">leap frog
+			<p class="firstone" style = "color: #7FAC97;">Pass the parcel
+			<p class="firstone" style = "color: #851D40;">Minesweeper
+			<p class="firstone" style = "color: #45285B;">angry birds
+			<p class="firstone" style = "color: #45285B;">gold miner
+			<p class="firstone" style = "color: #45285B;">Mole's World
+			<p class="firstone" style = "color: #45285B;">paper toss
+			<p class="firstone" style = "color: #45285B;">Plants Vs. Zombies
+			<p class="firstone" style = "color: #851D40;">superMario
+			<p class="firstone" style = "color: #45285B;">fruitninja
+			<p class="firstone" style = "color: #45285B;">counterstrike
+			<p class="firstone" style = "color: #A53956;">dots and boxes
+		</div>
+		<div class="right">
+			<p class="firstone" style = "color: #C5C5A5">lantern's puzzles
+			<p class="firstone" style = "color: #F5BB19">shell game
+			<p class="firstone" style = "color: #F6CAA9">chess
+			<p class="firstone" style = "color: #A53956">pokers
+			<p class="firstone" style = "color: #45285B">DouDizhu
+			<p class="firstone" style = "color: #F6CAA9">Gomoku
+			<p class="firstone" style = "color: #851D40">monopoly
+			<p class="firstone" style = "color: #F6CAA9">sneak and ladders
+			<p class="firstone" style = "color: #851D40">word search
+			<p class="firstone" style = "color: #C5C5A5">soccer
+			<p class="firstone" style = "color: #45285B">Happy Farm
+			<p class="firstone" style = "color: #45285B">winter bell
+			<p class="firstone" style = "color: #A53956">basketball
+			<p class="firstone" style = "color: #A53956">pingpong
+			<p class="firstone" style = "color: #A53956">hangman
+			<p class="firstone" style = "color: #E8435F">chatterbox
+			<p class="firstone" style = "color: #F5BB19">origami
+		</div>
+	</div>
+
+	<div id="thrid" class="detail">
+		<p class="firstone" style = "color: #851D40">cosplay
+		<p class="firstone" style = "color: #851D40">lego
+		<p class="firstone" style = "color: #45285B">where's my water
+		<p class="firstone" style = "color: #45285B">cut the rope
+		<p class="firstone" style = "color: #45285B">dota
+		<p class="firstone" style = "color: #851D40">pictionary
+		<p class="firstone" style = "color: #C5C5A5">tic-tac-toe
+		<p class="firstone" style = "color: #E8435F">Charades
+		<p class="firstone" style = "color: #45285B">Legends of the Three Kingdoms
+		<p class="firstone" style = "color: #45285B">QQ dance
+		<p class="firstone" style = "color: #45285B">World of Warcraft
+		<p class="firstone" style = "color: #A53956">tennis
+	</div>
+
+		<div id="fourth" class="detail">
+			<p class="firstone" style = "color: #EE8314;">Kendama
+			<p class="firstone" style = "color: #45285B;">Tap Tap Revenge
+			<p class="firstone" style = "color: #45285B;">devil may cry
+			<p class="firstone" style = "color: #45285B;">tomb raider
+			<p class="firstone" style = "color: #45285B;">Assassin's Creed
+			<p class="firstone" style = "color: #45285B;">GTA
+			<p class="firstone" style = "color: #45285B;">Nikki UP2U
+			<p class="firstone" style = "color: #45285B;">pokemon go
+			<p class="firstone" style = "color: #851D40;">resident evil
+			<p class="firstone" style = "color: #45285B;">minecraft
+			<p class="firstone" style = "color: #45285B;">overwatch
+			<p class="firstone" style = "color: #A53956;">twenty questions
+			<p class="firstone" style = "color: #851D40;">uno
+			<p class="firstone" style = "color: #45285B;">werewolf
+			<p class="firstone" style = "color: #45285B;">legue of legends
+			<p class="firstone" style = "color: #851D40;">jenga
+			<p class="firstone" style = "color: #C5C5A5;">dice
+			<p class="firstone" style = "color: #F19794;">house of cards
+			<p class="firstone" style = "color: #A53956;">ouija board
+			<p class="firstone" style = "color: #F5BB19;">polo
+			<p class="firstone" style = "color: #45285B;">flappy bird
+			<p class="firstone" style = "color: #45285B;">2048
+			<p class="firstone" style = "color: #A53956;">volleyball
+	</div>
+
+		<div id="fifth" class="detail">
+			<p class="firstone" style = "color: #45285B;">monument valley</p>
+			<p class="firstone" style = "color: #45285B;">NBA 2K19</p>
+			<p class="firstone" style = "color: #45285B;">PUBG</p>
+			<p class="firstone" style = "color: #A53956;">Mahjong</p>
+			<p class="firstone" style = "color: #F5BB19;">shooting</p>
+			<p class="firstone" style = "color: #F19794;">archery</p>
+			<p class="firstone" style = "color: #E8435F;">dancing line</p>
+			<p class="firstone" style = "color: #F19794;">boxing</p>
+			<p class="firstone" style = "color: #F5BB19;">golf</p>
+			<p class="firstone" style = "color: #45285B;">I Wanna Be the Guy</p>
+	</div>
+</div>
 
 
 <div class="time"> 
  <div class = "blank"></div>
  <div class = "content">
- <p style = "color: #45285B;">3000-1000 B.C.</p >
- <p style = "color: #851D40;">1000-0 B.C.</p >
- <p style = "color: #A53956;">0-500A.D.</p >
- <p style = "color: #E8435F;">500-1500A.D.</p >
- <p style = "color: #F19794;">16th century</p >
- <p style = "color: #EE8314;">17th century</p >
- <p style = "color: #F5BB19;">18th century</p >
- <p style = "color: #F6CAA9;">19th century</p >
- <p style = "color: #C5C5A5;">20th century</p >
- <p style = "color: #7FAC97;">contemporary</p >
+ <p style = "color: #7FAC97;">3000-1000 B.C.</p >
+ <p style = "color: #C5C5A5;">1000-0 B.C.</p >
+ <p style = "color: #F6CAA9;">0-500A.D.</p >
+ <p style = "color: #F5BB19;">500-1500A.D.</p >
+ <p style = "color: #EE8314;">16th century</p >
+ <p style = "color: #F19794;">17th century</p >
+ <p style = "color: #E8435F;">18th century</p >
+ <p style = "color: #A53956;">19th century</p >
+ <p style = "color: #851D40;">20th century</p >
+ <p style = "color: #45285B;">contemporary</p >
 
  </div>
+</div>
 </div>
 
     
 <script>
-var diyizu
-var dierzu
-var url = "https://raw.githubusercontent.com/WenpeiWang/ci19/master/studio/collection/mydata.json"
- fetch(url)
- .then(function(response){return response.json();})
- .then(function(json){ buildPage(json);})
-
- function buildPage(data){
-for(var i = 0; i < data.length; i = i + 1){
- var one = document.createElement("p");
- var two = document.createElement("p");
- one.classList.add("diyizu");
- two.classList.add("dierzu");
- // var image = document.createElement("h2");
- // var die = document.createElement("h3");
- document.body.appendChild(one);
- document.body.appendChild(two);
- // document.body.appendChild(image);
- // document.body.appendChild(die);
- one.innerHTML = data[i].one;
- two.innerHTML = data[i].two;
-
- // image.innerHTML = data[i].image;
- // die.innerHTML = data[i].die;
-
- // var image = document.createElement("img");
- // image.setAttribute("src", data[i].url);
- // document.body.appendChild(image);
 
 
- // if(data[i].kind == "water"){
- //  kind.style.color = "blue";
- // }
- // if(data[i].kind == "coke"){
- //  kind.style.color = "brown";
- // }
- // if(data[i].kind == "amazingmango"){
- //  kind.style.color = "red";  
- // }
- 
-}
-}
-function changeText(id) {
-  var diyizu = document.getElementsByClassName("diyizu");
-  for(var i = 0; i < diyizu.length; i++){
-  
-  diyizu[i].style.display = "block";
-}
-}
+$("#first1").click(function(){
+		$(".detail").hide();
+		$("#first").show();
+		$("#video").hide();
+		$('.list').css('color', 'black');
+	});
 
-function TwoText(id) {
-  var diyizu
-  var dierzu = document.getElementsByClassName("dierzu");
-  for(var i = 0; i < dierzu.length; i++){
-  
-  diyizu[i].style.display = "none";
-  dierzu[i].style.display = "block";
-}
-}
+$("#second1").click(function(){
+		$(".detail").hide();
+		$("#second").show();
+		$("#video").hide();
+		$('.list').css('color', 'black');
+	});
+
+$("#thrid1").click(function(){
+		$(".detail").hide();
+		$("#thrid").show();
+		$("#video").hide();
+		$('.list').css('color', 'black');
+	});
+
+$("#fourth1").click(function(){
+		$(".detail").hide();
+		$("#fourth").show();
+		$("#video").hide();
+		$('.list').css('color', 'black');
+	});
+
+$("#fifth1").click(function(){
+		$(".detail").hide();
+		$("#video").hide();
+		$('.list').css('color', 'black');
+		$("#fifth").show();
+	});
+
+$("#firstvideo").click(function(){
+		$("#video").show();
+		$('.list').css('color', 'white');
+	});
+
+
+
+let index = 1;
+const NUM_ICOS = 10;
+
+setInterval(function () {
+
+	index = index > NUM_ICOS ? 1 : index;
+
+	const css = document.body.style.cssText.split(';');
+
+	document.body.style.cssText = css.filter(function (ele) {
+		ele.split(':')[0] !== 'cursor';
+	}).join(';') + ';cursor: url("./icos/' + index + '.ico"), default;';
+	
+	index ++;
+}, 400);
+
 
 </script>
 
