@@ -1,0 +1,139 @@
+body{
+	margin:0;
+	font-family: 'Oswald', sans-serif;
+	
+}
+.bg{
+	position: fixed;
+}
+iframe{
+	position: fixed;
+	z-index: -2;
+	transform: translate(-367px, -40px);
+	width: 100vw;
+	height: 100vh;
+
+}
+
+.wubai{
+	color: #F5BB19;
+	}
+.sanqian{
+	color: #7FAC97;
+}
+.yiqian{
+	color: #C5C5A5;
+}
+.ling{
+	color: #F6CAA9;
+}
+.shiliu{
+	color: #EE8314;
+}
+.shiqi{
+	color: #F19794;
+}
+.shiba{
+	color: #E8435F;
+}
+.shijiu{
+	color: #A53956;
+}
+.ershi{
+	color: #851D40;
+}
+.con{
+	color: #45285B;
+}
+
+.heihei{
+	display: none;
+}
+.sandaowu, .liudaoshier, .shisandaoshiwu, .shiliudaoshiba, .now{
+	display: none;
+	text-align: center;
+}
+.sandaowu:hover, .liudaoshier:hover, .shisandaoshiwu:hover, .shiliudaoshiba:hover, .now:hover{
+	color: black;
+}
+#first1:hover, #second1:hover, #thrid1:hover, #fourth1:hover, #fifth1:hover{
+	text-decoration: underline; 
+	text-decoration-style: wavy;
+	text-decoration-color: #E8435F;
+}
+.url{
+	display: none;
+}
+.sandaowu{
+	transform: translate(0px, 80px);
+
+}
+.shisandaoshiwu{
+	transform: translate(0px, 120px);
+}
+.shiliudaoshiba{
+	transform: translate(0px, 30px);
+}
+
+.now{
+	transform: translate(0px, 120px);
+}
+.zuo{
+	/*position: relative;*/
+	z-index: 1;
+	transform: translate(-180px, 100px );
+	
+}
+.you{
+	/*position: relative;*/
+	transform: translate(120px, -320px);
+
+
+}
+.age{
+position:relative;
+z-index: 8;
+margin-top: 2%;
+width:30vw;
+height:100vh;
+float:left;
+font-size: 13px;
+
+}
+
+.time{
+position: relative;
+z-index: 3;
+margin-right: :0;
+width:30vw;
+height:30vh;
+float:right;
+text-align: right;
+font-size: 13px;
+}
+.blank{
+	height:60vh;
+}
+.content{
+	padding-left: 10%;
+	padding-right: 10%;
+	line-height: 7px;
+	margin-bottom: 0;
+}
+
+p{
+	line-height: 7px;
+}
+
+#games{
+	display:flex;
+	flex-direction: column;
+	width: 40vw;
+	height: 5vh;
+}
+
+#games div{
+	flex:2;
+}
+
+
