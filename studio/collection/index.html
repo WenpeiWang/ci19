@@ -82,6 +82,7 @@ for(var i = 0; i < data.length; i = i + 1){
 
   one.onclick=function(){
    document.getElementById("bg").appendChild(vid); 
+   $(vid).show();
    $('.list').css('color', 'red');
    $(document).click(function(event) {
     var text = $(event.target).text();
@@ -121,36 +122,44 @@ $("#first1").click(function(){
   $(".shisandaoshiwu").hide();
   $(".shiliudaoshiba").hide();
   $(".now").hide();
-  $("＃bg").hide();
+  $('.list').css('color', 'black');
  });
 $("#second1").click(function(){
+  // $(vid).hide();
   $(".liudaoshier").show();
   $(".sandaowu").hide();
   $(".shisandaoshiwu").hide();
   $(".shiliudaoshiba").hide();
   $(".now").hide();
+  $('.list').css('color', 'black');
  });
 $("#thrid1").click(function(){
+  // $(vid).hide();
   $(".liudaoshier").hide();
   $(".sandaowu").hide();
   $(".shiliudaoshiba").hide();
   $(".shisandaoshiwu").show();
   $(".now").hide();
+  $('.list').css('color', 'black');
  });
 $("#fourth1").click(function(){
+  // $(vid).hide();
   $(".liudaoshier").hide();
   $(".sandaowu").hide();
   $(".shiliudaoshiba").show();
   $(".shisandaoshiwu").hide();
   $(".now").hide();
+  $('.list').css('color', 'black');
  });
 $("#fifth1").click(function(){
+  // $(vid).hide();
   $(".liudaoshier").hide();
   $(".sandaowu").hide();
   $(".shiliudaoshiba").hide();
   $(".shisandaoshiwu").hide();
   $(".shisandaoshiwu").hide();
   $(".now").show();
+  $('.list').css('color', 'black');
  });
 
 

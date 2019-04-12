@@ -80,18 +80,17 @@ iframe{
 }
 .zuo{
 	/*position: relative;*/
-	z-index: 1;
-	transform: translate(-180px, 100px );
+	transform: translate(-140px, 100px );
 	
 }
 .you{
 	/*position: relative;*/
-	transform: translate(120px, -320px);
+	transform: translate(90px, -320px);
 
 
 }
 .age{
-position:relative;
+position: relative;
 z-index: 8;
 margin-top: 2%;
 width:30vw;
