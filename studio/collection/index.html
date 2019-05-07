@@ -99,13 +99,13 @@ for(var i = 0; i < data.length; i = i + 1){
   console.log(i);
    var url = data[i].url;
 
-var url = url.replace("watch?v=", "embed/", + "?autoplay=1&mute=1");
+var url = url.replace("watch?v=", "embed/");
 console.log(url);
     
     vid.setAttribute("src", url);
-    vid.setAttribute("?autoplay=1&mute=1")
     // vid.setAttribute("height", "500");
     console.log(vid);
+
     
 
 });

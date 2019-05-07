@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<title>Weather</title>
+	<meta charset="utf-8">
+	<style>
+		html, body { margin: 0;padding: 0;width: 100%;height: 100%;overflow: hidden; }
+		svg { width: 100%;height: 100%; }
+		.box { width: 100%;position: absolute;left: 0;top: 45%;display: flex;align-items: center;justify-content: center; }
+		#city { outline: none;color: white;	font-family: 'Quicksand', sans-serif; border: none;font-size: 100px;text-align: center;background-color: rgba(0, 0, 0, 0); }
+	</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg">
+	<!-- background filters -->
+	<defs>
+		<radialGradient id="background1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+			<stop offset="5%" style="stop-color:rgb(50, 126, 204);stop-opacity:0.8;"/>
+			<stop offset="100%" style="stop-color:rgb(69, 232, 233);stop-opacity:1;"/>
+		</radialGradient>
+	</defs>
+	<defs>
+		<radialGradient id="background2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+			<stop offset="5%" style="stop-color:rgb(96, 34, 133);stop-opacity:0.8;"/>
+			<stop offset="100%" style="stop-color:rgb(35, 65, 143);stop-opacity:1;"/>
+
+		</radialGradient>
+	</defs>
+	<defs>
+		<radialGradient id="background3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+			<stop offset="5%" style="stop-color:rgb(167, 39, 18);stop-opacity:0.8;"/>
+			<stop offset="100%" style="stop-color:rgb(80, 0, 142);stop-opacity:1;"/>
+	
+		</radialGradient>
+	</defs>
+	<!-- background -->
+	<rect class="background" x="0" y="0" width="100%" height="100%" style="fill:url(#background)"></rect>
+
+	<defs>
+		<radialGradient id="star-filter" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+			<stop offset="5%" style="stop-color:red;stop-opacity:1;"/>
+			<stop offset="100%" style="stop-color:orange;stop-opacity:1;"/>
+		</radialGradient>
+	</defs>
+
+	<defs>
+		<filter id="sun-filter">
+			<feGaussianBlur
+			in="SourceGraphic"
+			stdDeviation="2" />
+		</filter>
+	</defs>
+
+	<circle class="sun" cx="-50%" cy="45%" r="20%" fill="red" filter="url(#sun-filter)"></circle>
+</svg>
+
+<div class="box">
+	<input type="text" id="city" value="">
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+var NS = 'http://www.w3.org/2000/svg';
+
+window.onload = function () {
+	var mountain = document.createElementNS(NS, 'path');
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+	var d = 'M0 ' + height + ' L0 ' + height * 0.6 + ' C' + width * 0.1 + ' ' + height * 0.4 + ', ' + width * 0.25 + ' ' + height * 0.5 + ', ' + width * 0.3 + ' ' + height * 0.5 + ' C' + width * 0.5 + ' ' + height * 0.3 + ', ' + width * 0.6 + ' ' + height * 0.5  + ', ' + width * 0.7 + ' ' + height * 0.6 + ' C' + width * 0.4 + ' ' + height * 0.5 + ', ' + width * 0.7 + ' ' + height * 0.4 + ', ' + width * 1 + ' ' + height * 0.45 + ' L ' + width * 1 + ' ' + height + ' Z';
+	mountain.setAttribute('d', d);
+	mountain.setAttribute('fill', 'rgba(51, 48, 109, 0.5)');
+	var svg = document.getElementById('svg');
+	svg.appendChild(mountain);
+
+	mountain = document.createElementNS(NS, 'path');
+	d = 'M0 ' + height + ' L0 ' + height * 0.6 + ' C' + width * 0.1 + ' ' + height * 0.8 + ', ' + width * 0.15 + ' ' + height * 0.4 + ', ' + width * 0.4 + ' ' + height * 0.7 + ' C' + width * 0.6 + ' ' + height * 0.6 + ', ' + width * 0.6 + ' ' + height * 0.6  + ', ' + width * 0.9 + ' ' + height * 0.7 + ' C' + width * 0.9 + ' ' + height * 0.7 + ', ' + width * 1 + ' ' + height * 0.6 + ', ' + width * 1.2 + ' ' + height * 0.6 + ' L ' + width * 1.2 + ' ' + height + ' Z';
+	mountain.setAttribute('d', d);
+	mountain.setAttribute('fill', 'rgba(51, 48, 109, 0.8)');
+	svg.appendChild(mountain);
+
+		mountain = document.createElementNS(NS, 'path');
+}
+
+$('#city').focus(function () {
+	$(this).val('');
+});
+
+$('#city').blur(function () {
+	$(this).val('');
+});
+
+$('#city').change(function () {
+	var city = $('#city').val().trim();
+	if (!city) {
+		alert('You should enter a city name');
+		return ;
+	}
+	$('#city').val('');
+	getGeolocation(city, function (res1) {
+		console.log(res1);
+		var lat = res1.results[0].geometry.location.lat;
+		var lng = res1.results[0].geometry.location.lng;
+
+		getTimezone(lat, lng, function (res2) {
+			console.log(res2);
+			var cityTimezoneOffset = res2.rawOffset / 60;
+			var now = new Date();
+			var hereTimezoneOffset = - now.getTimezoneOffset();
+			var minutesOffset = hereTimezoneOffset - cityTimezoneOffset;
+			var hours = now.getHours();
+			var minutes = now.getMinutes();
+			var seconds = now.getSeconds();
+
+			var cityTodaySeconds = hours * 3600 + minutes * 60 + seconds - minutesOffset * 60;
+			if (cityTodaySeconds < 0) {
+				cityTodaySeconds += 24 * 60 * 60;
+			}
+			var percent = cityTodaySeconds / 86400;
+			if (percent >= 0.25 && percent <= 0.75) {
+				var sunX = (cityTodaySeconds - 6 * 60 * 60) / (12 * 60 * 60) * window.innerWidth;
+				$('.sun').attr('cx', sunX);
+			}
+
+			getWeather(lat, lng, function (res3) {
+				$('.star').remove();
+
+				console.log(res3);
+				var weather = res3.currently;
+				var temperature = (weather.temperature - 32) / 1.8;
+				var filterId = 'background';
+				var sunColor = '';
+				if (temperature < 10) {
+					filterId += '1';
+					sunColor = 'rgb(0, 250, 250)';
+				} else if (temperature < 20) {
+					filterId += '2';
+					sunColor = 'rgb(250, 220, 0)';
+				} else {
+					filterId += '3';
+					sunColor = 'rgb(255, 0, 0)';
+				}
+				$('.background').css('fill', 'url(#' + filterId + ')');
+				$('.sun').attr('fill', sunColor);
+
+				var precipProbability = weather.precipProbability;
+				var numMeteors = Math.round(precipProbability / 0.1);
+				console.log('流星 ', numMeteors);
+				for (var i = 0;i < numMeteors;i ++) {
+					var x = 0;
+					var y = 0;
+					while (true) {
+						x = Math.floor(Math.random() * window.innerWidth);
+						y = Math.floor(Math.random() * window.innerHeight / 2);
+						if (Math.hypot(x + 30 - sunX, y + 50 - window.innerHeight / 2) > window.innerHeight * 0.2) {
+							if (x + 60 <= window.innerWidth)
+							break;
+						}
+					}
+					var path = document.createElementNS(NS, 'path');
+					var d = 'M' + x + ' ' + y + ' C';
+					d += (x + 15) + ' ' + (y + 50) + ', ' + (x + 30) + ' ' + (y + 100) + ', ' + (x + 60) + ' ' + (y + 120);
+					d += ' C' + (x + 60) + ' ' + (y + 85) + ', ' + (x + 20) + ' ' + (y + 45) + ', ' + x + ' ' + y + ' Z';
+					path.setAttribute('d', d);
+					path.setAttribute('class', 'star');
+					path.setAttribute('style', 'fill: url(#star-filter)');
+					var svg = document.getElementById('svg');
+					svg.appendChild(path);
+				}
+			});
+		});
+	});
+});
+
+function getGeolocation (city, callback) {
+	console.log('https://maps.googleapis.com/maps/api/geocode/json?address=' 
+			+ city + '&key=AIzaSyB8lDL0zd9HS409ivqYwAEL7lR4unxP5qU')
+	$.ajax({
+		url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' 
+			+ city + '&key=AIzaSyB8lDL0zd9HS409ivqYwAEL7lR4unxP5qU',
+		method: 'GET',
+		success: function (response) {
+			callback(response);
+		}
+	});
+}
+
+function getTimezone (lat, lng, callback) {
+	$.ajax({
+		url: 'https://maps.googleapis.com/maps/api/timezone/json?location=' 
+			+ lat + ',' + lng 
+			+ '&timestamp=1478880000&key=AIzaSyB8lDL0zd9HS409ivqYwAEL7lR4unxP5qU',
+		method: 'GET',
+		success: function (response) {
+			callback(response);
+		}
+	});
+}
+
+function getWeather (lat, lng, callback) {
+	$.ajax({
+		url: 'https://api.darksky.net/forecast/71e56bd831af82e7f898b6f0cfc86a1c/' + lat + ',' + lng,
+		method: 'GET',
+		dataType: 'jsonp',
+		success: function (response) {
+			callback(response);
+		}
+	});
+}
+
+
+function calculateSunPosition () {
+	var now = new Date();
+}
+
+</script>
+</body>
+</html>
